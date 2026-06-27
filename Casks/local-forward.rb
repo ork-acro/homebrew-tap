@@ -9,6 +9,14 @@ cask "local-forward" do
 
   app "LocalForward.app"
 
+  # The app is ad-hoc signed (not notarized), so macOS quarantines it and shows
+  # the "could not verify ... free of malware" dialog. Strip the quarantine
+  # attribute on install/upgrade so it opens without manual `xattr`.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/LocalForward.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/LocalForward",
     "~/Library/Preferences/com.ork-acro.LocalForward.plist",
