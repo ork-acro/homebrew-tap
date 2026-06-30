@@ -1,6 +1,6 @@
 cask "local-forward" do
-  version "8.0.0"
-  sha256 "3a7461f28750499121e2d69cf82d8044fbc48e0e0ec4c00cbbf6828dc9d83713"
+  version "8.1.0"
+  sha256 "83441bf4cf86c2b2ce8856f48330aa649e0a5fac8e7910cdd44b0ded5e2ba7a8"
 
   url "https://github.com/ork-acro/local-forward-releases/releases/download/v#{version}/LocalForward-v#{version}.dmg"
   name "LocalForward"
